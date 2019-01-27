@@ -1,5 +1,10 @@
 package com.demo.connexissample.model;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.TypeConverters;
+
+import com.demo.connexissample.DAO.ResponseConverter;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -9,8 +14,10 @@ import java.util.List;
  * Created by samrat on 22/1/19.
  */
 
-public class MasterPojo {
+@Entity
+public class MasterPojo  {
 
+    @PrimaryKey
     @SerializedName("page")
     @Expose
     private Integer page;
@@ -25,6 +32,7 @@ public class MasterPojo {
     private Integer totalPages;
     @SerializedName("data")
     @Expose
+    @TypeConverters(ResponseConverter.class)
     private List<ResponseList> responseList = null;
 
 

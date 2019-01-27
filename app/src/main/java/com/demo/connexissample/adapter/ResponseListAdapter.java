@@ -56,8 +56,11 @@ public class ResponseListAdapter extends RecyclerView.Adapter<ResponseListAdapte
 
         private ImageView imageView;
         private TextView textView;
+
         public RecyclerViewHolder(View itemView) {
             super(itemView);
+            imageView = itemView.findViewById(R.id.image_avatar);
+            textView = itemView.findViewById(R.id.text_name);
         }
     }
 }

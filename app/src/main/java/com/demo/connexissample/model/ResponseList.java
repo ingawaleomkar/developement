@@ -1,5 +1,9 @@
 package com.demo.connexissample.model;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -7,10 +11,14 @@ import com.google.gson.annotations.SerializedName;
  * Created by samrat on 22/1/19.
  */
 
-public class ResponseList {
+@Entity
+public class ResponseList  {
+
+    @PrimaryKey
     @SerializedName("id")
     @Expose
     private Integer id;
+
     @SerializedName("first_name")
     @Expose
     private String firstName;
@@ -20,6 +28,7 @@ public class ResponseList {
     @SerializedName("avatar")
     @Expose
     private String avatar;
+
 
 
     public Integer getId() {
